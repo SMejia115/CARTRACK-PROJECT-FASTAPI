@@ -1,0 +1,67 @@
+<div class="mainContainer">
+  <div class="imagesContainer">
+    <div class="selectedImageContainer">
+      <img [src]="selectedImage" [alt]="selectedImage">
+  </div>
+  <div class="secondaryImages">
+    <div class="secondary-image" *ngFor="let image of images">
+      <img src="{{image}}" alt="Secondary Image" (click)="changeImage(image)">
+    </div>
+      <!-- <div class="secondary-image">
+          <img src="{{images[0]}}" alt="Secondary Image" (click)="changeImage(images[0])">
+      </div>
+      <div class="secondary-image">
+          <img src="{{images[1]}}" alt="Secondary Image" (click)="changeImage(images[1])">
+      </div>
+      <div class="secondary-image">
+          <img src="{{images[2]}}" alt="Secondary Image" (click)="changeImage(images[2])">
+      </div> -->
+  </div>
+  </div>
+  <div class="carInfo">
+    <div>
+      <h1><strong>INFORMACIÓN DEL VEHÍCULO</strong></h1>
+    </div>
+    <div>
+      <h2><strong>Fabricante:</strong> {{car.brand}}</h2>
+      <h2><strong>Modelo:</strong> {{car.model}}</h2>
+      <h2><strong>Año:</strong> {{car.year}}</h2>
+      <h2><strong>Color:</strong> {{car.color}}</h2>
+      <h2><strong>Tipo de Combustible:</strong> {{car.fuelType}}</h2>
+      <h2><strong>Número de chasis:</strong> {{car.chassisNumber}}</h2>
+      <h2><strong>Número de motor:</strong> {{car.engineNumber}}</h2>
+      <h2><strong>Placa:</strong> {{car.licensePlate}}</h2>
+      <h2><strong>Lugar de inscripción:</strong> {{car.city}}</h2>
+      <h2><strong>Avaluo:</strong> {{car.appraisal | currency}}</h2>
+      <h2><strong>Cilindraje:</strong> {{car.cylinderCapacity}}</h2>
+      <h2><strong>Licencia de tránsito:</strong> {{car.transitLicenseNumber}}</h2>
+      <h2><strong>Vigencia SOAT:</strong> {{car.soatDate}}</h2>
+      <h2><strong>Vigencia Técnico Mecánica:</strong> {{car.tecnoDate}}</h2>
+
+
+  </div>
+ </div>
+  <div class="sellInfo">
+      <h1>INFORMACIÓN DEL CLIENTE</h1>
+      <input type="text" [(ngModel)]="clientDocument" placeholder="Número de documento">
+      <button (click)="getClientInfo()">Obtener Información</button>
+      <div *ngIf="clientNotFound">
+        <p>El cliente no existe.</p>
+      </div>
+      <div *ngIf="clientInfo && !clientNotFound">
+        <h2><strong>Primer Nombre:</strong> {{clientInfo.firstName }}</h2>
+        <h2><strong>Segundo Nombre:</strong> {{clientInfo.secondName}}</h2>
+        <h2><strong>Apellido:</strong> {{clientInfo.lastName}}</h2>
+        <h2><strong>Dirección:</strong> {{clientInfo.address}}</h2>
+        <h2><strong>Teléfono:</strong> {{clientInfo.phone}}</h2>
+        <h2><strong>Reportes Judiciales:</strong> {{clientInfo.boolReports}}</h2>
+        <input type="text" [(ngModel)]="totalPrice" placeholder="Precio final de la venta">
+        
+        <button [disabled]="clientInfo.boolReports" (click)="registerSale()">Registrar Venta</button>
+        <!-- Agrega más campos según la información del cliente -->
+      </div>
+  </div>
+
+
+</div>
+

@@ -1,0 +1,46 @@
+/* Estilos para la lista de carros */
+.car-list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.car-list-item:hover {
+  background-color: #f0f0f0;
+}
+
+.car-image {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.car-details {
+  flex: 1;
+}
+
+.car-details p {
+  margin: 0;
+}
+
+.modification-form {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.modification-form input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de guardar cambios */
+.modification-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}

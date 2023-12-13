@@ -1,0 +1,26 @@
+<div class="card-container">
+  <mat-card class="card" (click)="navigateTo('/cars')" >
+      <mat-card-title>Venta</mat-card-title>
+      <img src="../../../assets/cartrackLogo.png" alt="Venta">
+  </mat-card>
+
+  <mat-card class="card" (click)="navigateTo('/client/registration')">
+      <mat-card-title>Registrar Cliente</mat-card-title>
+      <img src="../../../assets/user.png" alt="Registrar Cliente">
+  </mat-card>
+
+  <mat-card class="card" (click)="navigateTo('/buy')">
+      <mat-card-title>Registrar Compra</mat-card-title>
+      <img src="../../../assets/shop.png" alt="Registrar Compra">
+  </mat-card>
+
+  <mat-card class="card" *ngIf="getRole()" (click)="navigateTo('/admin')">
+      <mat-card-title>Opciones de Administrador</mat-card-title>
+      <img src="../../../assets/report.png" alt="Mis Reportes">
+  </mat-card>
+
+    <mat-card class="card" *ngIf="!getRole()" (click)="navigateTo('/personal/report')">
+        <mat-card-title>Mis Reportes</mat-card-title>
+        <img src="../../../assets/report.png" alt="Reportes">
+    </mat-card>
+</div>

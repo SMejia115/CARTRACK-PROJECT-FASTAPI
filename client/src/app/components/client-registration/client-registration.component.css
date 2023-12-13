@@ -1,0 +1,66 @@
+/* client-registration.component.css */
+
+.client-registration-container {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ededf1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.client-registration-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.3);
+  ;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+mat-checkbox,
+button {
+  width: 93%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6c8ca4;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  background-color: #a9c0cd;
+  color: #000000;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #6c8ca4;
+}
+.text-danger {
+  color: #d81515; 
+  font-size: 14px; 
+  font-weight: bold; 
+  margin-top: 5px; 
+}
+

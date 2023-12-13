@@ -1,0 +1,23 @@
+<div class="sales-report">
+  <h2>MIS REPORTES DE VENTAS</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sale ID</th>
+        <th>Car ID</th>
+        <th>Sale Date</th>
+        <th>Client ID</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.saleID }}</td>
+        <td>{{ sale.carID }}</td>
+        <td>{{ sale.saleDate }}</td>
+        <td>{{ sale.clientID }}</td>
+        <td>{{ sale.totalPrice | currency:'USD':'symbol':'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,122 @@
+/* Estilos para el contenedor principal */
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Estilos para la sección de imágenes */
+.imagesContainer {
+  flex: 1; /* Se expande para ocupar el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.selectedImageContainer {
+  /* Estilos para la imagen grande */
+  max-width: 600px;
+}
+
+.selectedImageContainer img {
+  /* Estilos para la imagen grande */
+  width: 100%;
+}
+
+.secondaryImages {
+  /* Estilos para las imágenes secundarias */
+  display: flex;
+}
+
+.secondary-image img {
+  /* Estilos para cada imagen secundaria */
+  max-width: 125px;
+  margin: 5px
+}
+
+/* Estilos para la sección de información del vehículo */
+.carInfo {
+  flex: 1; /* Se expande para ocupar el espacio restante */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para la sección de información del cliente */
+.sellInfo {
+  flex: 1; /* Se expande para ocupar el espacio restante */
+}
+
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagesContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectedImageContainer {
+  margin: 10px;
+}
+
+.selectedImageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.secondaryImages {
+  display: flex;
+  flex-direction: row;
+}
+
+.secondary-image {
+  margin: 5px;
+}
+
+.secondary-image img {
+  max-width: 80px;
+  height: auto;
+  cursor: pointer;
+}
+
+.carInfo {
+  flex: 1;
+  padding: 10px;
+}
+
+.sellInfo {
+  flex: 1;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

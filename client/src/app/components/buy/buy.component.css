@@ -1,0 +1,79 @@
+/* Estilos para el contenedor de compra de auto */
+.buy-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f1f7;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.3); 
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.3);
+}
+/* Añadiendo sombra al contenedor del formulario */
+.buy-container form {
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.1); 
+}
+
+.buy-container mat-form-field {
+  width: 100%;
+}
+
+.buy-container input, .buy-container select {
+  width: calc(100% - 24px); 
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+}
+
+.buy-container input:focus, .buy-container select:focus {
+  border-color: #3f8cbf;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilos para el botón */
+.buy-container button[type="submit"] {
+  background-color: #3f8cbf;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  width: 100%; /* Ajustar al ancho del contenedor */
+  margin-top: 10px; /* Espacio arriba del botón */
+}
+
+.buy-container button[type="submit"]:hover {
+  background-color: #6c8ca4;
+}
+
+
+.buy-container mat-form-field textarea {
+  text-align: right;
+}
+
+
+.buy-container mat-error {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Estilos para los campos de fecha */
+.buy-container input[type="date"] {
+  width: calc(95% - 24px);
+}
+
+/* Estilos para el dropdown personalizado */
+.custom-dropdown select {
+  width: calc(100% - 12px);
+}

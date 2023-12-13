@@ -1,0 +1,20 @@
+<div class="Home-main-container">
+
+  <div class="Home-product-card" *ngFor="let car of cars">
+      <figure class="Home-card-image">
+          <img src="{{car.carImages[0].ImageURL}}" alt="Car Img" >
+
+      </figure>
+
+      <div class='Home-card-info'  >
+          <h2 class="Home-card-title"> {{car.car}} </h2>
+
+          <!-- <p class='Home-card-description'> <b>Description: </b> {{product.description}} </p> -->
+          <h3 class='Home-card-price'> <b>Model: </b>{{car.brand + ' ' + car.model + ' ' +car.year}}</h3>
+
+          <button class='Home-card-button' mat-raised-button  (click)="viewProductPage(car.carID)">Registrar Venta</button>
+      </div>
+
+  </div>
+
+</div>

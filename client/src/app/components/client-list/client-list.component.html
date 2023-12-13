@@ -1,0 +1,19 @@
+<div class="client-list">
+  <ul>
+    <li *ngFor="let client of clients" (click)="showClientDetails(client)">
+      {{ client.clientID }} - {{ client.firstName }} {{ client.lastName }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedClient" class="client-details">
+  <h2>Detalles del Cliente</h2>
+  <p><strong>Client ID:</strong> {{ selectedClient.clientID }}</p>
+  <p><strong>First Name:</strong> {{ selectedClient.firstName }}</p>
+  <p><strong>Last Name:</strong> {{ selectedClient.lastName }}</p>
+  <p><strong>Identification Number:</strong> {{ selectedClient.identificationNumber }}</p>
+  <p><strong>Second Name:</strong> {{ selectedClient.secondName }}</p>
+  <p><strong>Address:</strong> {{ selectedClient.address }}</p>
+  <p><strong>Phone:</strong> {{ selectedClient.phone }}</p>
+  <p><strong>Reports:</strong> {{ selectedClient.boolReports ? 'Yes' : 'No' }}</p>
+</div>

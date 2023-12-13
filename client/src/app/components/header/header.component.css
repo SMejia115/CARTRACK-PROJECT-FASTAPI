@@ -1,0 +1,74 @@
+/* Estilos generales para el encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #142b3b; /* Color de fondo del encabezado */
+  color: #fff; /* Color de texto */
+  margin-bottom: 80px; /* Espacio inferior */
+}
+
+/* Estilos para la sección izquierda (logo circular) */
+.header-left img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Para crear un logo circular */
+}
+
+/* Estilos para la sección central (título) */
+.header-center h1 {
+  font-size: 50px;
+  margin: 0;
+  user-select: none;
+}
+
+/* Estilos para la sección derecha (menú desplegable) */
+.header-right .logout-button {
+  cursor: pointer;
+}
+
+.header-right{
+  display:flex;
+}
+
+.header-right .menu {
+  display: none; /* Inicialmente oculto */
+  position: absolute;
+  top: 100%; /* Muestra el menú debajo del botón de menú */
+  right: 0;
+  background-color: #142b3b; /* Color de fondo del menú */
+  padding: 10px;
+}
+
+.header-right .menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header-right .menu ul li {
+  margin: 5px 0;
+}
+
+.header-right .menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilos para el icono de menú (Material Icons) */
+.material-icons {
+  font-size: 24px;
+}
+
+.user-info {
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+  margin-right: 20px; /* Agrega un margen a la derecha */
+}
+
+.user-info span {
+  font-weight: bold; /* Hace que el texto sea negrita */
+  margin-right: 10px; /* Agrega un margen a la derecha del texto */
+  color: white; /* Color de texto */
+  font-size: 18px; /* Tamaño de fuente */
+}

@@ -1,0 +1,52 @@
+<div class="formContainer">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registro de Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #registrationForm="ngForm" (ngSubmit)="submitLogin()">
+        <mat-form-field appareance="outline">
+          <label for ="userNameInput">Nombre de usuario</label>
+          <input  id="userNameInput" name="username" required [(ngModel)]="userData.userName">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="passwordInput">Contraseña</label>
+          <input matInput type="password"  id="passwordInput" name="password" required [(ngModel)]="userData.password">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="identificationNumberInput">Número de identificación</label>
+          <input  id="identificationNumberInput" name="identificationNumber" required [(ngModel)]="userData.identificationNumber">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="firstNameInput">Primer nombre</label>
+          <input  id="firstNameInput" name="firstName" required [(ngModel)]="userData.firstName">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="secondNameInput">Segundo nombre</label>
+          <input  id="secondNameInput" name="secondName" [(ngModel)]="userData.secondName">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="lastNameInput">Apellido</label>
+          <input id="lastNameInput" name="lastName" required [(ngModel)]="userData.lastName">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="address">Dirección</label>
+          <input  id="address" name="address" required [(ngModel)]="userData.address">
+        </mat-form-field>
+        <mat-form-field appareance="outline">
+          <label for ="phone">Teléfono</label>
+          <input  id="phone" name="phone" required [(ngModel)]="userData.phone">
+        </mat-form-field>
+        <mat-form-field>
+          <label for="role">Selecciona una opción:</label>
+          <select name="role" id="role" placeholder="role" required [(ngModel)]="userData.role">
+            <option value="admin">Administrador</option>
+            <option value="seller">Vendedor</option>
+          </select>
+        </mat-form-field>
+        <button class="boton" type="submit" [disabled]="registrationForm.form.invalid">Registrar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
+</div>

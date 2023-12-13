@@ -1,0 +1,27 @@
+/* Estilos para la lista de clientes */
+.client-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.client-list li {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.client-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para el cuadro de detalles del cliente */
+.client-details {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.client-details h2 {
+  margin: 0;
+}

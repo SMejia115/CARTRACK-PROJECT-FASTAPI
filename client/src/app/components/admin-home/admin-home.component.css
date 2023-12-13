@@ -1,0 +1,21 @@
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Distribuir las tarjetas horizontalmente con espacio entre ellas */
+}
+
+.card {
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  max-width: 380px; /* Tamaño máximo para mantener la proporción */
+  height: 500px; /* Ajusta la altura según tus preferencias */
+  margin: 10px; /* Espacio entre las tarjetas */
+  padding: 20px;
+  background-color: #f0f0f0; /* Color de fondo de las tarjetas */
+  border: 1px solid #a8bfcc; /* Borde de las tarjetas */
+  text-align: center; /* Alinear contenido al centro */
+  cursor: pointer; /* Cambiar el cursor al hacer hover */
+  transition: transform 0.2s; /* Efecto de escala al hacer hover */
+}
+
+.card:hover {
+  transform: scale(1.1); /* Escala al hacer hover */
+}
