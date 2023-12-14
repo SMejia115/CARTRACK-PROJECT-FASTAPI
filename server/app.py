@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
+#Middlewares
+from fastapi.middleware.cors import CORSMiddleware
+
+
 #Models
 from models.userModel import User
 from models.clientModel import Client
@@ -11,12 +15,16 @@ from models.saleModel import Sale
 
 
 # Routers
+from routes.loginRoutes import loginRouter
 from routes.usersRoutes import usersRouter
 
 #DB
 from config.database import engine, Base
 
 
+origins = [
+    "http://localhost:4200",  # Puerto en el que va a estar el frontend
+]
 
 
 
@@ -24,11 +32,21 @@ app = FastAPI()
 app.tittle = "CARTRACK - SERVER"
 app.version = "1.0.0"
 
+# Middlewares
+app.add_middleware(
+  CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+  )
 
 # Create DB
 Base.metadata.create_all(bind=engine)
 
 
+app.include_router(loginRouter)
 app.include_router(usersRouter)
 #----------------------------------------
 @app.get("/")
@@ -36,13 +54,16 @@ def message():
   return JSONResponse(
     content={
     "message": "Welcome to the CARTRACK - SERVER API",
-    'users': {
+    'login':{
+      'login': 'POST /api/login',
+            },
+    'users':{
       'createUser': 'POST /users',
       'allUsers': 'GET /users', 
       'userByID': 'GET /users/:userID',
       'userByUsername': 'GET /users/username/:username',
       
-      #   'updateUser': 'PUT /api/users/:userID',
+      #   'updateUser': 'PUT /api/users/:userID', OJO PENDIENTE
       #   'deleteUser': 'DELETE /api/users/:userID',
 		  # },
       # 'cars': {
@@ -58,22 +79,12 @@ def message():
       #   'createImage': 'POST /api/images',
       #   'deleteImage': 'DELETE /api/images/:productID',
       #           },
-      # 'inventory': {
-      #   'allInventory': 'GET /api/inventory',
-      #   'inventoryByProductID': 'GET /api/inventory/product/:productID',
-      #   'updateInventory': 'PUT /api/inventory/product/:productID',
-      #           },
       # 'orders': {
       #   'allOrders': 'GET /api/orders', 
       #   'ordersByUserID': 'GET /api/orders/user/:userID',
       #   'createOrder': 'POST /api/orders',
       #           },
-      # 'payment': {
-      #   'paymentLinkSuccess': 'POST /api/payment/success',
-      #   'paymentLinkCancel': 'POST /api/payment/cancel',
-      #           },
-      # 'login': {
-      #   'login': 'POST /api/login',
+      
                }
       }
       , status_code=200)

@@ -24,6 +24,5 @@ class Client(Base):
   lastName = Column(String(20), nullable=False)
   address = Column(String(100), nullable=False)
   phone = Column(String(15), nullable=False)
-  boolReports = Column(Integer, nullable=False)
   state = Column(Integer, nullable=False)
 

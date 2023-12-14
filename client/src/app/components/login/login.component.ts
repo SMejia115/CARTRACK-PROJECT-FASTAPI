@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
+import { decode } from 'jsonwebtoken';
 
 // import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -60,8 +61,10 @@ export class LoginComponent{
     this.http.post(this.apiUrl, this.userData, { headers: this.headers }).subscribe(
       (response:any) => {
         // Maneja la respuesta aquí
-        const token = response.token; // Asegúrate de que el token esté en la respuesta
+        const token = response.token;
+        console.log(token)
         const decodedToken:any = jwt_decode(token);
+        console.log(decodedToken)
         if (response.token){
           window.alert("Bienvenido " + decodedToken.user.firstName + " " + decodedToken.user.lastName);
           window.localStorage.setItem("token", JSON.stringify(response.token));
