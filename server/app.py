@@ -19,6 +19,7 @@ from routes.loginRoutes import loginRouter
 from routes.usersRoutes import usersRouter
 from routes.carsRoutes import carsRouter
 from routes.clientRoutes import clientRouter
+from routes.imageRoutes import carsImgRouter
 
 #DB
 from config.database import engine, Base
@@ -52,6 +53,7 @@ app.include_router(loginRouter)
 app.include_router(usersRouter)
 app.include_router(carsRouter)
 app.include_router(clientRouter)
+app.include_router(carsImgRouter)
 
 #----------------------------------------
 @app.get("/")

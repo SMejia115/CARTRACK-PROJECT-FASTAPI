@@ -14,6 +14,6 @@ class CarImg(Base):
 
   imgID = Column(Integer, primary_key=True, autoincrement=True)
   carID = Column(Integer, ForeignKey("car.carID"), nullable=False)
-  ImageURL = Column(String(500), nullable=False)
+  imageURL = Column(String(500), nullable=False)
 
  

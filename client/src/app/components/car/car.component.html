@@ -54,7 +54,7 @@
         <h2><strong>Apellido:</strong> {{clientInfo.lastName}}</h2>
         <h2><strong>Dirección:</strong> {{clientInfo.address}}</h2>
         <h2><strong>Teléfono:</strong> {{clientInfo.phone}}</h2>
-        <h2><strong>Reportes Judiciales:</strong> {{clientInfo.boolReports}}</h2>
+        <label for="totalPrice">Precio final de la venta:</label>
         <input type="text" [(ngModel)]="totalPrice" placeholder="Precio final de la venta">
         
         <button [disabled]="clientInfo.boolReports" (click)="registerSale()">Registrar Venta</button>

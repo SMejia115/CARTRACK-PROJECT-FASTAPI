@@ -25,8 +25,8 @@ def validateUser(login: Login):
   password = login.password
   try:
     db = Session()
-    user = db.query(UserModel).filter(UserModel.userName == username and UserModel.password == password).first()
-    if user:
+    user = db.query(UserModel).filter(UserModel.userName == username).first()
+    if user.password == password:
       token = create_token(data = {'user':jsonable_encoder(user)})
       print(token)
       return JSONResponse({'token':token}, status_code=200)
