@@ -17,6 +17,8 @@ from models.saleModel import Sale
 # Routers
 from routes.loginRoutes import loginRouter
 from routes.usersRoutes import usersRouter
+from routes.carsRoutes import carsRouter
+from routes.clientRoutes import clientRouter
 
 #DB
 from config.database import engine, Base
@@ -48,6 +50,9 @@ Base.metadata.create_all(bind=engine)
 
 app.include_router(loginRouter)
 app.include_router(usersRouter)
+app.include_router(carsRouter)
+app.include_router(clientRouter)
+
 #----------------------------------------
 @app.get("/")
 def message():
@@ -55,7 +60,7 @@ def message():
     content={
     "message": "Welcome to the CARTRACK - SERVER API",
     'login':{
-      'login': 'POST /api/login',
+      'login': 'POST /login',
             },
     'users':{
       'createUser': 'POST /users',
@@ -66,23 +71,25 @@ def message():
       #   'updateUser': 'PUT /api/users/:userID', OJO PENDIENTE
       #   'deleteUser': 'DELETE /api/users/:userID',
 		  # },
-      # 'cars': {
-      #   'allCars': 'GET /api/products',
-      #   'carByID': 'GET /api/products/:productID',
-      #   'createCar': 'POST /api/products',
+    'cars': {
+      'allCars': 'GET /cars',
+      'carByID': 'GET /cars/:carID',
+      'CarByLicensePlate': 'GET /cars/licensePlate/:licensePlate',
+      'soldCars': 'GET /sell/cars',
+      'availableCars': 'GET /available/cars',
+      'createCar': 'POST /cars/add',
       #   'updateCar': 'PUT /api/products/:productID',
       #   'deleteCar': 'DELETE /api/products/:productID',
-      #   },
+        },
+      'clients':{
+        'createClient': 'POST /clients',
+
+      }
       # 'images': {
       #   'allImages': 'GET /api/images',
       #   'imageByID': 'GET /api/images/:productID',
       #   'createImage': 'POST /api/images',
       #   'deleteImage': 'DELETE /api/images/:productID',
-      #           },
-      # 'orders': {
-      #   'allOrders': 'GET /api/orders', 
-      #   'ordersByUserID': 'GET /api/orders/user/:userID',
-      #   'createOrder': 'POST /api/orders',
       #           },
       
                }
