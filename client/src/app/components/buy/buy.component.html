@@ -1,154 +1,156 @@
-<div class="buy-container">
-  <h2>Compra de Auto</h2>
-  <form [formGroup]="nuevoAutoForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <mat-form-field>
-        <label for="brand">Marca:</label>
-        <input matInput id="brand" name="brand" formControlName="brand">
-        <mat-error *ngIf="nuevoAutoForm.get('brand')?.hasError('required')">La marca es requerida.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="model">Modelo:</label>
-        <input matInput id="model" name="model" formControlName="model">
-        <mat-error *ngIf="nuevoAutoForm.get('model')?.hasError('required')">El modelo es requerido.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="year">Año:</label>
-        <input matInput id="year" name="year" formControlName="year">
-        <mat-error *ngIf="nuevoAutoForm.get('year')?.hasError('required')">El año es requerido.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('year')?.hasError('pattern')">Año no válido (deben ser 4 dígitos).</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="color">Color:</label>
-        <input matInput id="color" name="color" formControlName="color">
-        <mat-error *ngIf="nuevoAutoForm.get('color')?.hasError('required')">El color es requerido.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="fuelType">Tipo de Combustible:</label>
-        <input matInput id="fuelType" name="fuelType" formControlName="fuelType">
-        <mat-error *ngIf="nuevoAutoForm.get('fuelType')?.hasError('required')">El tipo de combustible es requerido.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="chassisNumber">Número de Chasis:</label>
-        <input matInput id="chassisNumber" name="chassisNumber" formControlName="chassisNumber">
-        <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('required')">El número de chasis es requerido.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('minlength')">El número de chasis es demasiado corto.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('maxlength')">El número de chasis es demasiado largo.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="engineNumber">Número de Motor:</label>
-        <input matInput id="engineNumber" name="engineNumber" formControlName="engineNumber">
-        <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('required')">El número de motor es requerido.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('minlength')">El número de motor es demasiado corto.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('maxlength')">El número de motor es demasiado largo.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="licensePlate">Placa:</label>
-        <input matInput id="licensePlate" name="licensePlate" formControlName="licensePlate">
-        <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('required')">La placa es requerida.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('minlength')">La placa es demasiado corta.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('maxlength')">La placa es demasiado larga.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="city">Ciudad:</label>
-        <input matInput id="city" name="city" formControlName="city">
-        <mat-error *ngIf="nuevoAutoForm.get('city')?.hasError('required')">La ciudad es requerida.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="appraisal">Precio:</label>
-        <input matInput type="number" id="appraisal" name="appraisal" formControlName="appraisal">
-        <mat-error *ngIf="nuevoAutoForm.get('appraisal')?.hasError('required')">La valoración es requerida.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('appraisal')?.hasError('min')">El valor debe ser mayor que 0.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="cylinderCapacity">Cilindraje:</label>
-        <input matInput id="cylinderCapacity" name="cylinderCapacity" formControlName="cylinderCapacity">
-        <mat-error *ngIf="nuevoAutoForm.get('cylinderCapacity')?.hasError('required')">La capacidad del cilindro es requerida.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="transitLicenseNumber">Número de Licencia de Tránsito:</label>
-        <input matInput id="transitLicenseNumber" name="transitLicenseNumber" formControlName="transitLicenseNumber">
-        <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('required')">El número de licencia de tránsito es requerido.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('minlength')">El número de licencia de tránsito es demasiado corto.</mat-error>
-        <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('maxlength')">El número de licencia de tránsito es demasiado largo.</mat-error>
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <label for="soatDate">Fecha de vencimiento SOAT:</label>
-      <input type="date" id="soatDate" name="soatDate" formControlName="soatDate">
-    </div>
-    
-    <div class="form-group">
-      <label for="tecnoDate">Fecha de vencimiento Técnico Mecánica:</label>
-      <input type="date" id="tecnoDate" name="tecnoDate" formControlName="tecnoDate">
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <label for="previousOwner">Propietario Anterior:</label>
-        <input matInput  id="previousOwner" name="previousOwner" formControlName="previousOwner">
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <label for="type">Tipo de Auto:</label>
-      <div class="custom-dropdown">
-        <select id="type" name="type" formControlName="type">
-          <option value="sedan">Sedán</option>
-          <option value="suv">SUV</option>
-          <option value="pickup">Pickup</option>
-          <option value="hatchback">Hatchback</option>
-          <option value="convertible">Convertible</option>
-          <option value="other">Otro</option>
-        </select>
+<div class="main-container">
+  <div class="buy-container">
+    <h2>Compra de Auto</h2>
+    <form [formGroup]="nuevoAutoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <mat-form-field>
+          <label for="brand">Marca:</label>
+          <input matInput id="brand" name="brand" formControlName="brand">
+          <mat-error *ngIf="nuevoAutoForm.get('brand')?.hasError('required')">La marca es requerida.</mat-error>
+        </mat-form-field>
       </div>
-    </div>
 
-    <div>
-      <input type="file" (change)="onFileChange($event)" multiple>
-      <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
-    </div>
-    <div *ngIf="uploadedFiles.length > 0">
-      <p>Archivos subidos:</p>
-      <ul>
-        <li *ngFor="let file of uploadedFiles">{{ file.name }}</li>
-      </ul>
-    </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="model">Modelo:</label>
+          <input matInput id="model" name="model" formControlName="model">
+          <mat-error *ngIf="nuevoAutoForm.get('model')?.hasError('required')">El modelo es requerido.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitButtonDisabled()">Guardar Auto</button>
-  </form>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="year">Año:</label>
+          <input matInput id="year" name="year" formControlName="year">
+          <mat-error *ngIf="nuevoAutoForm.get('year')?.hasError('required')">El año es requerido.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('year')?.hasError('pattern')">Año no válido (deben ser 4 dígitos).</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="color">Color:</label>
+          <input matInput id="color" name="color" formControlName="color">
+          <mat-error *ngIf="nuevoAutoForm.get('color')?.hasError('required')">El color es requerido.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="fuelType">Tipo de Combustible:</label>
+          <input matInput id="fuelType" name="fuelType" formControlName="fuelType">
+          <mat-error *ngIf="nuevoAutoForm.get('fuelType')?.hasError('required')">El tipo de combustible es requerido.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="chassisNumber">Número de Chasis:</label>
+          <input matInput id="chassisNumber" name="chassisNumber" formControlName="chassisNumber">
+          <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('required')">El número de chasis es requerido.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('minlength')">El número de chasis es demasiado corto.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('chassisNumber')?.hasError('maxlength')">El número de chasis es demasiado largo.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="engineNumber">Número de Motor:</label>
+          <input matInput id="engineNumber" name="engineNumber" formControlName="engineNumber">
+          <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('required')">El número de motor es requerido.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('minlength')">El número de motor es demasiado corto.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('engineNumber')?.hasError('maxlength')">El número de motor es demasiado largo.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="licensePlate">Placa:</label>
+          <input matInput id="licensePlate" name="licensePlate" formControlName="licensePlate">
+          <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('required')">La placa es requerida.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('minlength')">La placa es demasiado corta.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('licensePlate')?.hasError('maxlength')">La placa es demasiado larga.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="city">Ciudad:</label>
+          <input matInput id="city" name="city" formControlName="city">
+          <mat-error *ngIf="nuevoAutoForm.get('city')?.hasError('required')">La ciudad es requerida.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="appraisal">Precio:</label>
+          <input matInput type="number" id="appraisal" name="appraisal" formControlName="appraisal">
+          <mat-error *ngIf="nuevoAutoForm.get('appraisal')?.hasError('required')">La valoración es requerida.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('appraisal')?.hasError('min')">El valor debe ser mayor que 0.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="cylinderCapacity">Cilindraje:</label>
+          <input matInput id="cylinderCapacity" name="cylinderCapacity" formControlName="cylinderCapacity">
+          <mat-error *ngIf="nuevoAutoForm.get('cylinderCapacity')?.hasError('required')">La capacidad del cilindro es requerida.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="transitLicenseNumber">Número de Licencia de Tránsito:</label>
+          <input matInput id="transitLicenseNumber" name="transitLicenseNumber" formControlName="transitLicenseNumber">
+          <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('required')">El número de licencia de tránsito es requerido.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('minlength')">El número de licencia de tránsito es demasiado corto.</mat-error>
+          <mat-error *ngIf="nuevoAutoForm.get('transitLicenseNumber')?.hasError('maxlength')">El número de licencia de tránsito es demasiado largo.</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <label for="soatDate">Fecha de vencimiento SOAT:</label>
+        <input type="date" id="soatDate" name="soatDate" formControlName="soatDate">
+      </div>
+      
+      <div class="form-group">
+        <label for="tecnoDate">Fecha de vencimiento Técnico Mecánica:</label>
+        <input type="date" id="tecnoDate" name="tecnoDate" formControlName="tecnoDate">
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <label for="previousOwner">Propietario Anterior:</label>
+          <input matInput  id="previousOwner" name="previousOwner" formControlName="previousOwner">
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <label for="type">Tipo de Auto:</label>
+        <div class="custom-dropdown">
+          <select id="type" name="type" formControlName="type">
+            <option value="sedan">Sedán</option>
+            <option value="suv">SUV</option>
+            <option value="pickup">Pickup</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="convertible">Convertible</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <input type="file" (change)="onFileChange($event)" multiple>
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+      </div>
+      <div *ngIf="uploadedFiles.length > 0">
+        <p>Archivos subidos:</p>
+        <ul>
+          <li *ngFor="let file of uploadedFiles">{{ file.name }}</li>
+        </ul>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitButtonDisabled()">Guardar Auto</button>
+    </form>
+  </div>
 </div>

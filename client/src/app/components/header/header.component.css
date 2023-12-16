@@ -6,7 +6,7 @@
   margin: none;
   padding: none;
   border-radius: 0 0 5px 5px; 
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra al hacer hover */
 }
 
 /* Estilos generales para el encabezado */
@@ -39,6 +39,8 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-decoration-color: #0e6ba8;
+  text-decoration:wavy;
 }
 
 /* Estilos para la sección derecha (menú desplegable) */

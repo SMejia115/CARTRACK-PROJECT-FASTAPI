@@ -1,19 +1,28 @@
-<div class="client-list">
-  <ul>
-    <li *ngFor="let client of clients" (click)="showClientDetails(client)">
-      {{ client.clientID }} - {{ client.firstName }} {{ client.lastName }}
-    </li>
-  </ul>
-</div>
-
-<div *ngIf="selectedClient" class="client-details">
-  <h2>Detalles del Cliente</h2>
-  <p><strong>Client ID:</strong> {{ selectedClient.clientID }}</p>
-  <p><strong>First Name:</strong> {{ selectedClient.firstName }}</p>
-  <p><strong>Last Name:</strong> {{ selectedClient.lastName }}</p>
-  <p><strong>Identification Number:</strong> {{ selectedClient.identificationNumber }}</p>
-  <p><strong>Second Name:</strong> {{ selectedClient.secondName }}</p>
-  <p><strong>Address:</strong> {{ selectedClient.address }}</p>
-  <p><strong>Phone:</strong> {{ selectedClient.phone }}</p>
-  <p><strong>Reports:</strong> {{ selectedClient.boolReports ? 'Yes' : 'No' }}</p>
-</div>
+ <div class="main-container">
+  <div class="client-list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Client ID</th>
+          <th>First Name</th>
+          <th>Second Name</th>
+          <th>Last Name</th>
+          <th>Identification Number</th>
+          <th>Address</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients" (click)="showClientDetails(client)">
+          <td>{{ client.clientID }}</td>
+          <td>{{ client.firstName }}</td>
+          <td>{{ client.secondName }}</td>
+          <td>{{ client.lastName }}</td>
+          <td>{{ client.identificationNumber }}</td>
+          <td>{{ client.address }}</td>
+          <td>{{ client.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 

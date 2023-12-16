@@ -44,3 +44,89 @@
   padding: 10px 20px;
   cursor: pointer;
 }
+
+/*------------------*/
+.main-container{
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+th {
+  background-color: #2988c8f1;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2988c8f1;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+td input[type="text"]{
+  text-align: center;
+  width: 80%; /* Ocupa todo el ancho de la celda */
+}
+td input[type="date"]{
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.input-td{
+  padding: 0;
+  margin: 0;
+}
+
+input[type="text"]:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  border-color: #0e6ba8; /* Cambia el color del borde cuando está enfocado */
+  box-shadow: 0 0 10px rgba(14, 107, 168, 0.5); /* Sombra más pronunciada en foco */
+}
+
+input[type="date"]:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  border-color: #0e6ba8; /* Cambia el color del borde cuando está enfocado */
+  box-shadow: 0 0 10px rgba(14, 107, 168, 0.5); /* Sombra más pronunciada en foco */
+}

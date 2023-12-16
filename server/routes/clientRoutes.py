@@ -53,6 +53,8 @@ def getClientByIdentificationNumber(identificationNumber: str):
   try:
     db = Session()
     client = db.query(ClientModel).filter(ClientModel.identificationNumber == identificationNumber).first()
+    if not client:
+      return JSONResponse(status_code=404, content={"message": "Client not found"})
     return JSONResponse(status_code=200, content=jsonable_encoder(client))
   except Exception as e:
     print(e)

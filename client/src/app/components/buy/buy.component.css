@@ -1,11 +1,18 @@
+.main-container{
+  display: flex;
+  padding: 30px;
+}
 /* Estilos para el contenedor de compra de auto */
 .buy-container {
-  max-width: 400px;
-  margin: 0 auto;
+  padding: 30px;
+
+  width: 30%;
   padding: 20px;
+  /* background-color: #ededf1; */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f0f1f7;
-  box-shadow: 0 0 20px rgba(0, 0, 255, 0.3); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: auto;
 }
 
 h2{

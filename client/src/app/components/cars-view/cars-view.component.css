@@ -1,11 +1,5 @@
-/* .color1 { #3f8cbf };
-.color2 { #accbdc };
-.color3 { #142c3c };
-.color4 { #6c8ca4 };
-.color5 { #a9c0cd }; */
-
 .Home-main-container{
-  background-color: #c9d6e0;
+  /* background-color: #c9d6e0; */
   margin-top: 0px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -66,7 +60,7 @@
 }
 
 .mat-mdc-raised-button.mat-unthemed {
-  --mdc-protected-button-container-color: #3f8cbf;
+  --mdc-protected-button-container-color: #0e6ba8;
   --mdc-protected-button-label-text-color: #000;
 }
 

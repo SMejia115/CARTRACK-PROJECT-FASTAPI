@@ -1,16 +1,59 @@
-<div *ngFor="let car of cars" class="car-list-item" (click)="openModificationForm(car)">
-  <img [src]="car.carImages[0].ImageURL" alt="Car Image" class="car-image">
-  <div class="car-details">
-    <p>{{ car.brand }}</p>
-    <p>{{ car.model }}</p>
-    <p>{{ car.year }}</p>
-    <p>{{ car.cylinderCapacity }}</p>
-    <p>{{ car.status }}</p>
-  </div>
+<div class="main-container">
+  <h2>
+    AVAILABLE CAR LIST
+  </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Car Image</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Cylinder Capacity</th>
+        <th>Color</th>
+        <th>City</th>
+        <th>SOAT Date</th>
+        <th>Tecno Date</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars; let i = index">
+        <td>
+          <img [src]="car.carImages[0].ImageURL" alt="Car Image" class="car-image">
+        </td>
+        <td>{{ car.brand }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.year }}</td>
+        <td>{{ car.cylinderCapacity }}</td>
+        <td *ngIf="inEditModeIndex !==i" >{{ car.color }}</td>
+        <td *ngIf="inEditModeIndex ===i">
+          <input type="text" [(ngModel)]="car.color" name="color">
+        </td>
+        <td *ngIf="inEditModeIndex !==i">{{ car.city }}</td>
+        <td *ngIf="inEditModeIndex ===i">
+          <input type="text" [(ngModel)]="car.city" name="city">
+        </td>
+        <td *ngIf="inEditModeIndex !==i">{{ car.soatDate | date }}</td>
+        <td *ngIf="inEditModeIndex ===i" class="input-td">
+          <input type="date" [(ngModel)]="car.soatDate" name="soatDate">
+        </td>
+        <td *ngIf="inEditModeIndex !==i">{{ car.tecnoDate | date }}</td>
+        <td *ngIf="inEditModeIndex ===i" class="input-td">
+          <input type="date" [(ngModel)]="car.tecnoDate" name="tecnoDate">
+        </td>
+        <td>
+          <!-- <button (click)="openModificationForm(car)">Update Car</button> -->
+          <button *ngIf="inEditModeIndex !== i" (click)="enterEditMode(i)">Edit Car</button>
+          <button *ngIf="inEditModeIndex === i" (click)="updateCar(car)">Save Changes</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<!-- Formulario de modificación -->
-<div *ngIf="selectedCar" class="modification-form">
+<!-- <div *ngIf="selectedCar" class="modification-form">
   <form (ngSubmit)="updateCar()">
     <label for="color">Color:</label>
     <input id="color" type="text" [(ngModel)]="selectedCar.color" name="color">
@@ -30,5 +73,5 @@
     </mat-form-field>
     <button type="submit">Guardar Cambios</button>
   </form>
-</div>
+</div> -->
 

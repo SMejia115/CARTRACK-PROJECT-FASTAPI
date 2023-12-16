@@ -1,10 +1,17 @@
+.main-container{
+  display: flex;
+  padding: 30px;
+}
+
 .formContainer {
-  margin: 0 auto;
-  width: 400px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 255, 0.2);
-  padding: 15px;
-  background-color: #e6ebf0; /* Añadido fondo blanco */
+  margin: auto;
+  padding: 30px;
+  width: 30%;
+  padding: 20px;
+  /* background-color: #ededf1; */
+  border: 1px solid #ccc;
   border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 

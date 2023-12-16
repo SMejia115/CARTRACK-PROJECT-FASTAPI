@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CarListComponent implements OnInit {
   cars?: any[];  // Esta variable almacenará la lista de coches disponibles.
   selectedCar: any;  // Esta variable se utilizará para almacenar el coche seleccionado para su modificación.
+  inEditModeIndex: number = -1;
 
   constructor(private http: HttpClient) { }
 
@@ -27,19 +28,30 @@ export class CarListComponent implements OnInit {
     this.selectedCar = car;
   }
 
-  updateCar() {
-    const carData = {...this.selectedCar};
+  updateCar(car: any) {
+    this.inEditModeIndex = -1;
+    console.log(car);
+    const carData = {...car};
     delete carData.carImages;
-    carData.soatDate = carData.soatDate.toISOString().split('T')[0];
-    carData.tecnoDate = carData.tecnoDate.toISOString().split('T')[0];
+    if (typeof carData.soatDate !== 'string') {
+      carData.soatDate = carData.soatDate.toISOString().split('T')[0];
+    }
+    if (typeof carData.tecnoDate !== 'string') {
+      carData.tecnoDate = carData.tecnoDate.toISOString().split('T')[0];
+    }
     console.log(carData);
     // Realiza la solicitud HTTP para actualizar el coche seleccionado en this.selectedCar.
-    this.http.put(`http://localhost:5000/modify/cars/${this.selectedCar.carID}`, carData)
+    this.http.put(`http://localhost:5000/modify/cars/${carData.carID}`, carData)
       .subscribe(() => {
         // Actualización exitosa, puedes mostrar un mensaje de éxito.
         console.log('Car updated successfully');
         this.selectedCar = null;  // Cierra el formulario de modificación.
         this.loadCars();  // Vuelve a cargar la lista de coches.
       });
+    
+  }
+
+  enterEditMode(index: number) {
+    this.inEditModeIndex = index;
   }
 }
