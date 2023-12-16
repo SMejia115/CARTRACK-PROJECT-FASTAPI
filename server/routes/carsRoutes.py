@@ -17,7 +17,7 @@ carsRouter = APIRouter()
 #------------------------------------------------------------------------------------------------
 #Create Car
 
-@carsRouter.post("/cars/add", tags=["cars"])
+@carsRouter.post("/cars", tags=["cars"])
 def createCar(car: Car):
   db = Session()
   newCar = CarModel(**car.model_dump())
@@ -73,7 +73,7 @@ def getAvailableCars():
 def getAvailableCarsWithImages():
   db = Session()
   try:
-    cars = db.query(CarModel).filter(CarModel.status == "Available").all()
+    cars = db.query(CarModel).filter(CarModel.status == "available").all()
     
     carsWithImages = []
     carsWithImages = []
@@ -118,7 +118,36 @@ def getCarWithImagesByID(carID: int):
 
 #------------------------------------------ P U T -----------------------------------------------
 #------------------------------------------------------------------------------------------------
-
+# Update car by ID
+@carsRouter.put("/modify/cars/{carID}", tags=["cars"])
+def updateCar(carID: int, car: Car):
+  db = Session()
+  try:
+    carToUpdate = db.query(CarModel).filter(CarModel.carID == carID).first()
+    if carToUpdate is None:
+      raise HTTPException(status_code=404, detail="Car not found")
+    carToUpdate.brand = car.brand
+    carToUpdate.model = car.model
+    carToUpdate.year = car.year
+    carToUpdate.color = car.color
+    carToUpdate.fuelType = car.fuelType
+    carToUpdate.chassisNumber = car.chassisNumber
+    carToUpdate.engineNumber = car.engineNumber
+    carToUpdate.licensePlate = car.licensePlate
+    carToUpdate.city = car.city
+    carToUpdate.appraisal = car.appraisal
+    carToUpdate.cylinderCapacity = car.cylinderCapacity
+    carToUpdate.transitLicenseNumber = car.transitLicenseNumber
+    carToUpdate.soatDate = car.soatDate
+    carToUpdate.tecnoDate = car.tecnoDate
+    carToUpdate.previousOwner = car.previousOwner
+    carToUpdate.type = car.type
+    carToUpdate.status = car.status
+    db.commit()
+    return JSONResponse(status_code=200, content={"message": "Car updated successfully"})
+  except Exception as e:
+    print(e)
+    return JSONResponse(status_code=500, content={"message": "Error"})
 
 
 #----------------------------------------- D E L E T E ------------------------------------------

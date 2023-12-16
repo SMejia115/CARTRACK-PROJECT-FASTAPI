@@ -5,12 +5,14 @@
 .color5 { #a9c0cd }; */
 
 .Home-main-container{
-  margin-top: 25px;
+  background-color: #c9d6e0;
+  margin-top: 0px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 25px;
   padding: 0 15px;
   align-items: center;
+  padding: 30px;
 }
 
 .Home-product-card {

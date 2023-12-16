@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="boolReports">Recibir Reportes:</label>
       <input type="checkbox" id="boolReports" name="boolReports" formControlName="boolReports">
     </div>
@@ -63,15 +63,7 @@
         <span>{{ selectedFileName }}</span>
       </mat-form-field>
 
-      <div *ngIf="selectedFile">
-        <!-- <object [data]="selectedFileURL" type="application/pdf" width="100%" height="600">
-          Puedes descargar el PDF desde <a [href]="selectedFileURL" target="_blank">este enlace</a>.
-        </object>
-        <button mat-raised-button color="primary" >Eliminar Archivo</button> -->
-        
-      </div>
-
-    </div>
+    </div> -->
 
     <button type="submit" [disabled]="isSubmitButtonDisabled()">Registrar Cliente</button>
   </form>

@@ -28,8 +28,7 @@ export class ClientRegistrationComponent {
       secondName: ['', [Validators.maxLength(20),  Validators.pattern('[a-zA-Z]+')]],
       lastName: ['', [Validators.required, Validators.maxLength(20), Validators.pattern('[a-zA-Z]+')]],
       address: ['', [Validators.required]],
-      phone: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('[0-9-]+')]],
-      boolReports: [false, Validators.required],
+      phone: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('[0-9-]+')]]
       });
   }
 

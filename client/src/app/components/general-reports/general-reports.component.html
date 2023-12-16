@@ -20,6 +20,7 @@
           <th>Car ID</th>
           <th>Sale Date</th>
           <th>Client ID</th>
+          <th>Seller ID</th>
           <th>Total Price</th>
         </tr>
       </thead>
@@ -29,6 +30,7 @@
           <td>{{ sale.carID }}</td>
           <td>{{ sale.saleDate }}</td>
           <td>{{ sale.clientID }}</td>
+          <td>{{ sale.sellerID }}</td>
           <td>{{ sale.totalPrice | currency:'USD':'symbol':'1.2-2' }}</td>
         </tr>
       </tbody>

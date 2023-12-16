@@ -163,7 +163,6 @@ export class BuyComponent {
         (response: any) => {
           // Maneja la respuesta del servidor, por ejemplo, muestra un mensaje de éxito
           console.log('Auto guardado exitosamente:', response);
-
           // Ahora, envía las imágenes
           this.uploadImagesSequentially(this.carData.licensePlate, this.uploadedFiles).then(
             () => {
@@ -196,7 +195,7 @@ export class BuyComponent {
   uploadImage(licensePlate: string, file: File): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       const formData = new FormData();
-      formData.append('image', file, file.name);
+      formData.append('image', file);
 
       const headers = new HttpHeaders();
 

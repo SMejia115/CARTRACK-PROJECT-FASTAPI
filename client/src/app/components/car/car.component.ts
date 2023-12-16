@@ -11,7 +11,7 @@ import jwt_decode from 'jwt-decode';
 // Definición de la estructura con la que se mandará el cuerpo de la petición
 interface Sale {
   carID: number;
-  saleDate: Date;
+  saleDate: String;
   clientID: number;
   sellerID: number;
   totalPrice: number;
@@ -40,7 +40,7 @@ export class CarComponent implements OnInit{
   
   saleData : Sale = {
     carID: 0,
-    saleDate: new Date(),
+    saleDate: '',
     clientID: 0,
     sellerID: 0,
     totalPrice: 0
@@ -105,7 +105,10 @@ export class CarComponent implements OnInit{
     console.log(this.clientInfo.clientID);
     console.log(this.sellerID);
     this.saleData.carID = this.carID;
-    this.saleData.saleDate = new Date();
+    
+    const saleDate = new Date();  
+    const formattedSaleDate = saleDate.toISOString().split('T')[0];
+    this.saleData.saleDate = formattedSaleDate;
     this.saleData.clientID = parseInt(this.clientInfo.clientID, 10);
     this.saleData.sellerID = parseInt(this.sellerID, 10);
     this.saleData.totalPrice = this.totalPrice;

@@ -18,7 +18,6 @@ loginRouter = APIRouter()
 #------------------------------------------ P O S T ---------------------------------------------
 #------------------------------------------------------------------------------------------------
 # Validate user
-
 @loginRouter.post("/login", tags=["login"])
 def validateUser(login: Login):
   username = login.userName
@@ -26,7 +25,7 @@ def validateUser(login: Login):
   try:
     db = Session()
     user = db.query(UserModel).filter(UserModel.userName == username).first()
-    if user.password == password:
+    if user.password == password: 
       token = create_token(data = {'user':jsonable_encoder(user)})
       print(token)
       return JSONResponse({'token':token}, status_code=200)

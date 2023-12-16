@@ -1,13 +1,15 @@
-<header class="header">
-    <div class="header-left" (click)="navigateTo('/home')">
-        <img src="../../../assets/cartrackLogo.png" alt="Logo Circular" (click)="navigateTo('/home')">
-    </div>
-    <div class="header-center">
-        <h1 (click)="navigateTo('/home')">CarTrack</h1>
-    </div>
-    <div class="header-right">
-        <div class="logout-button" (click)="logout()" >
-            <i class="material-icons">logout</i>
+<div class="header-container">
+    <header class="header">
+        <div class="header-left" (click)="navigateTo('/home')">
+            <img src="../../../assets/cartrackLogo.png" alt="Logo Circular" (click)="navigateTo('/home')">
         </div>
-    </div>
-</header>
+        <div class="header-center">
+            <h1 (click)="navigateTo('/home')">CarTrack</h1>
+        </div>
+        <div class="header-right">
+            <div class="logout-button" (click)="logout()" >
+                <i class="material-icons">logout</i>
+            </div>
+        </div>
+    </header>
+</div>

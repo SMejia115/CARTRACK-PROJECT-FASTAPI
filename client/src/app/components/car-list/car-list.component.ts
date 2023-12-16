@@ -19,7 +19,7 @@ export class CarListComponent implements OnInit {
   loadCars() {
     this.http.get('http://localhost:5000/available/cars/images')
       .subscribe((data: any) => {
-        this.cars = data;
+        this.cars = data; 
       });
   }
 
@@ -28,8 +28,13 @@ export class CarListComponent implements OnInit {
   }
 
   updateCar() {
+    const carData = {...this.selectedCar};
+    delete carData.carImages;
+    carData.soatDate = carData.soatDate.toISOString().split('T')[0];
+    carData.tecnoDate = carData.tecnoDate.toISOString().split('T')[0];
+    console.log(carData);
     // Realiza la solicitud HTTP para actualizar el coche seleccionado en this.selectedCar.
-    this.http.put(`http://localhost:5000/modify/cars/${this.selectedCar.carID}`, this.selectedCar)
+    this.http.put(`http://localhost:5000/modify/cars/${this.selectedCar.carID}`, carData)
       .subscribe(() => {
         // Actualización exitosa, puedes mostrar un mensaje de éxito.
         console.log('Car updated successfully');

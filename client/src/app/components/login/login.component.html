@@ -1,9 +1,10 @@
-
 <div class="loginContainer">
   <mat-card>
+    <div class="logo">
+      <img src="../../../assets/cartrackLogo.png" alt="Logo">
+    </div>
     <mat-card-header>
-      <h2>Login</h2>
-      <img src="../../../assets/cartrackLogo.png" alt="Logo" class="logo">
+      <h2>LOGIN</h2>
     </mat-card-header>
     <mat-card-content>
       <form #loginForm="ngForm" (ngSubmit)="submitLogin()">
@@ -13,7 +14,7 @@
         <mat-form-field appearance="outline">
           <input matInput type="password" placeholder="Password" id="passwordInput" name="password" required [(ngModel)]="userData.password">
         </mat-form-field>
-        <button  class="login" type="submit" [disabled]="loginForm.form.invalid">Login</button>
+        <button  class="login" type="submit" [disabled]="loginForm.form.invalid">LOGIN</button>
       </form>
     </mat-card-content>
   </mat-card>

@@ -1,9 +1,10 @@
 .loginContainer {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d7e5f0; 
+  background-color:#c9d6e0; 
+  height: 85vh;
 }
 
 .logo {
@@ -14,13 +15,17 @@
 
 h2 {
   margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.4);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #142b3be0;
 }
 
 mat-card {
   max-width: 400px;
   width: 100%;
   border: 1px solid #ccc;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 mat-card-header {
@@ -36,7 +41,6 @@ mat-card-content {
 
 mat-form-field {
   width: 100%;
-  margin-bottom: 10px;
 }
 
 button {
@@ -45,7 +49,9 @@ button {
 }
 
 .login:hover {
-  background-color: #6c8ca4;
+  background-color:  #142b3b;
+  color: white;
+  font-weight: bold;
 }
 
 .login{
@@ -54,4 +60,14 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+}
+
+.logo{
+  margin-top: 20px;
+  align-items: center;
+  width: fit-content;
+}
+
+.logo img{
+  width: 150px;
 }

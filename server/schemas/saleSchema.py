@@ -19,7 +19,8 @@ class Sale(BaseModel):
   saleID: Optional[int] = Field(None)
   carID: int
   saleDate: date
-  clientID: int
+  clientID: int 
   sellerID: int
-  totalPrice: int
-
+  totalPrice: float  
+ 
+  

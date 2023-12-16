@@ -20,6 +20,7 @@ from routes.usersRoutes import usersRouter
 from routes.carsRoutes import carsRouter
 from routes.clientRoutes import clientRouter
 from routes.imageRoutes import carsImgRouter
+from routes.saleRoutes import saleRouter
 
 #DB
 from config.database import engine, Base
@@ -54,6 +55,7 @@ app.include_router(usersRouter)
 app.include_router(carsRouter)
 app.include_router(clientRouter)
 app.include_router(carsImgRouter)
+app.include_router(saleRouter)
 
 #----------------------------------------
 @app.get("/")
@@ -63,7 +65,7 @@ def message():
     "message": "Welcome to the CARTRACK - SERVER API",
     'login':{
       'login': 'POST /login',
-            },
+    },
     'users':{
       'createUser': 'POST /users',
       'allUsers': 'GET /users', 
@@ -72,28 +74,36 @@ def message():
       
       #   'updateUser': 'PUT /api/users/:userID', OJO PENDIENTE
       #   'deleteUser': 'DELETE /api/users/:userID',
-		  # },
+		},
     'cars': {
-      'allCars': 'GET /cars',
-      'carByID': 'GET /cars/:carID',
-      'CarByLicensePlate': 'GET /cars/licensePlate/:licensePlate',
-      'soldCars': 'GET /sell/cars',
-      'availableCars': 'GET /available/cars',
-      'createCar': 'POST /cars/add',
+      'createCar': 'POST /cars',
+      'getAllCars': 'GET /cars',
+      'getCarByID': 'GET /cars/:carID',
+      'getCarByLicensePlate': 'GET /cars/licensePlate/:licensePlate',
+      'getSoldCars': 'GET /sell/cars',
+      'getAvailableCars': 'GET /available/cars',
+      'getAvailableCarsWithImages': 'GET /available/cars/images',
+      'getCarWithImagesByID': 'GET /car/images/:carID',
+      
       #   'updateCar': 'PUT /api/products/:productID',
       #   'deleteCar': 'DELETE /api/products/:productID',
-        },
-      'clients':{
-        'createClient': 'POST /clients',
-
-      }
-      # 'images': {
-      #   'allImages': 'GET /api/images',
-      #   'imageByID': 'GET /api/images/:productID',
-      #   'createImage': 'POST /api/images',
-      #   'deleteImage': 'DELETE /api/images/:productID',
-      #           },
-      
-               }
-      }
-      , status_code=200)
+    },
+    'clients':{
+      'createClient': 'POST /clients',
+      'getAllClients': 'GET /clients',
+      'getClientByID': 'GET /clients/:clientID',
+      'getClientByIdentificationNumber': 'GET /clients/identificationNumber/:identificationNumber',
+    },
+    'images': {
+      'createCarImg': 'POST /image/add/:carID',
+      'createCarImageByLicensePlate': 'POST /image/add/licensePlate/:licensePlate',
+      'getAllCarImages': 'GET /images',
+      'getCarImageByID': 'GET /images/:carImgID',
+      'getCarImageByCarID': 'GET /images/car/:carID',
+    #   'allImages': 'GET /api/images',
+    #   'imageByID': 'GET /api/images/:productID',
+    #   'createImage': 'POST /api/images',
+    #   'deleteImage': 'DELETE /api/images/:productID',
+    #           },
+    }
+  }, status_code=200)

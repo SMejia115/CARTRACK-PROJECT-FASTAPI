@@ -1,21 +1,37 @@
 .card-container {
   display: flex;
   justify-content: space-between; /* Distribuir las tarjetas horizontalmente con espacio entre ellas */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  height: 80vh;
+  overflow: hidden;
+  padding-top: 30px;
+  background-color: #c9d6e0; 
+
 }
 
 .card {
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
-  max-width: 380px; /* Tamaño máximo para mantener la proporción */
-  height: 500px; /* Ajusta la altura según tus preferencias */
+  width: 23%; /* Ocupa todo el ancho de la pantalla */
+  /* max-width: 380px; Tamaño máximo para mantener la proporción */
+  height: 70vh;
   margin: 10px; /* Espacio entre las tarjetas */
   padding: 20px;
-  background-color: #f0f0f0; /* Color de fondo de las tarjetas */
+  background-color: white; /* Color de fondo de las tarjetas */
   border: 1px solid #a8bfcc; /* Borde de las tarjetas */
   text-align: center; /* Alinear contenido al centro */
   cursor: pointer; /* Cambiar el cursor al hacer hover */
   transition: transform 0.2s; /* Efecto de escala al hacer hover */
+  justify-content: space-around;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #142b3be0;
+}
+
+.card img {
+  width: 100%; /* Ocupa todo el ancho de la tarjeta */
+  height: 65%; /* Altura de la imagen */
+  border-radius: 10px; /* Borde redondeado */
 }
 
 .card:hover {
-  transform: scale(1.1); /* Escala al hacer hover */
+  transform: scale(1.04); /* Escala al hacer hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra al hacer hover */
 }
