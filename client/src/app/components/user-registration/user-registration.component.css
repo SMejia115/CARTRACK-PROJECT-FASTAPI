@@ -79,7 +79,7 @@ mat-raised-button{
   display: block; /* Asegura que el botón ocupe todo el ancho del contenedor */
   margin: 0 auto; /* Lo centra horizontalmente dentro del contenedor */
   padding: 10px 20px; /* Ajusta el espaciado interno del botón */
-  background-color: blue; /* Color de fondo azul */
+  background-color: #0e6ba8; /* Color de fondo azul */
   color: black; /* Color del texto (blanco en este caso) */
   border: none; /* Elimina el borde del botón */
   border-radius: 5px; /* Añade esquinas redondeadas */
